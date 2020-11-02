@@ -15,7 +15,7 @@ import { BullsAndCowsMainComponent } from './bulls-and-cows-main/bulls-and-cows-
     RouterModule.forRoot([
       {
         path: '',
-        component: AppComponent
+        component: BullsAndCowsMainComponent
       },
       {
         path: 'bullsandcows',
