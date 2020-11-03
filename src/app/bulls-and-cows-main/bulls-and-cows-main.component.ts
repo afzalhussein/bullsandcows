@@ -45,11 +45,11 @@ export class BullsAndCowsMainComponent implements OnInit {
     this.results.push({ guess: [...this.guess], result: { bulls, cows } });
     guesses.forEach(guessElement => guessElement.value = '');
     this.reset();
-    if (bulls === 4) { this.win = true; }
+    if (bulls === this.guessLen) { this.win = true; }
     // throw new Error(`Method not implemented., ${this.results}`);
   }
 
-  randomSequence(): string [] {
+  randomSequence(): string[] {
     {
       const quest = [];
       for (let i = 0; i < this.guessLen; i++) {
