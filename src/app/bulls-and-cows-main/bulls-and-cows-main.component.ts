@@ -16,9 +16,9 @@ export class BullsAndCowsMainComponent implements OnInit {
 
   ngOnInit(): void {
     this.reset();
+    this.guessLen = 4;
     this.getRandomSequence();
     this.win = false;
-    this.guessLen = 3;
     this.results = [];
   }
 
@@ -50,9 +50,8 @@ export class BullsAndCowsMainComponent implements OnInit {
 
   getRandomSequence(): void {
     {
-      const guessLen = 4;
       const quest = [];
-      for (let i = 0; i < guessLen; i++) {
+      for (let i = 0; i < this.guessLen; i++) {
         let rand = '' + Math.floor(Math.random() * 9);
         while (quest.includes(rand)) {
           rand = '' + Math.floor(Math.random() * 9);
