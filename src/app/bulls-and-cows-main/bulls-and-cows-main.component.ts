@@ -17,7 +17,7 @@ export class BullsAndCowsMainComponent implements OnInit {
   ngOnInit(): void {
     this.reset();
     this.guessLen = 4;
-    this.getRandomSequence();
+    this.secret = this.randomSequence();
     this.win = false;
     this.results = [];
   }
@@ -31,6 +31,7 @@ export class BullsAndCowsMainComponent implements OnInit {
     this.verifyGuess(guesses);
     this.reset();
   }
+
   verifyGuess(guesses: any[]): void {
     let bulls = 0;
     let cows = 0;
@@ -48,7 +49,7 @@ export class BullsAndCowsMainComponent implements OnInit {
     // throw new Error(`Method not implemented., ${this.results}`);
   }
 
-  getRandomSequence(): void {
+  randomSequence(): string [] {
     {
       const quest = [];
       for (let i = 0; i < this.guessLen; i++) {
@@ -58,7 +59,7 @@ export class BullsAndCowsMainComponent implements OnInit {
         }
         quest[i] = ('' + rand);
       }
-      this.secret = quest;
+      return quest;
     }
   }
 
