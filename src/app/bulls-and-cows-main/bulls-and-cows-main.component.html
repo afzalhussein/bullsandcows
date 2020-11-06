@@ -1,41 +1,31 @@
 <h1 class="content">Guess {{guessLen}} numbers</h1>
 
 <p class="content" *ngIf="win">Congratulations!</p>
-
+<!-- <app-guess-number *ngIf="!win" style="margin-bottom: 1rem;"></app-guess-number> -->
 
 <div class="content" *ngIf="!win" style="margin-bottom: 1rem;">
-        <label>
+    <label>
         1:
         <input type="text" #guessFirst (blur)="updateGuess(guessFirst.value)" required size="1" maxlength="1">
-     </label>
-     <label>
+    </label>
+    <label>
         2:
         <input type="text" #guessSecond (blur)="updateGuess(guessSecond.value)" required size="1" maxlength="1">
 
-     </label>
-     <label>
+    </label>
+    <label>
         3:
-        <input type="text" #guessThird (blur)="updateGuess(guessThird.value)"  required size="1" maxlength="1">
-     </label>
-     <label>
+        <input type="text" #guessThird (blur)="updateGuess(guessThird.value)" required size="1" maxlength="1">
+    </label>
+    <label>
         4:
-        <input type="text" #guessFourth (blur)="updateGuess(guessFourth.value)"  required size="1" maxlength="1">
-     </label>
-     &nbsp;
-     <label for="guessCheck" >
-         <input type="button" value="Guess" name="guessCheck" (click)="onInput([guessFirst, guessSecond, guessThird, guessFourth])" (disabled)="guessFirst.errors">
-     </label>
+        <input type="text" #guessFourth (blur)="updateGuess(guessFourth.value)" required size="1" maxlength="1">
+    </label>
+    &nbsp;
+    <label for="guessCheck">
+        <input type="button" value="Guess" name="guessCheck"
+            (click)="onInput([guessFirst, guessSecond, guessThird, guessFourth])" (disabled)="guessFirst.errors">
+    </label>
 </div>
 
-<table>
-    <tr>
-        <th>Step</th>
-        <th>Guess</th>
-        <th>Guess Result</th>
-    </tr>
-    <tr *ngFor="let result of results; index as i">
-        <td>{{i+1}}</td>
-        <td>{{result.guess.join('')}}</td>
-        <td>{{result.result.bulls||0}} bulls and {{result.result.cows||0}} cows<span *ngIf="result.result.bulls===4">(win!)</span></td>
-    </tr>
-</table>
+<app-result-table [results]="results" (guessUpdate)='updateGuess($event)' (guessOnInput)="onInput($event)"></app-result-table>

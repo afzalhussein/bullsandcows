@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>Step</th>
+        <th>Guess</th>
+        <th>Guess Result</th>
+    </tr>
+    <tr *ngFor="let result of results; index as i">
+        <td>{{i+1}}</td>
+        <td>{{result.guess.join('')}}</td>
+        <td>{{result.result.bulls||0}} bulls and {{result.result.cows||0}} cows<span *ngIf="result.result.bulls===4">(win!)</span></td>
+    </tr>
+</table>

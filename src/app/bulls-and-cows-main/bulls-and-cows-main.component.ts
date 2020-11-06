@@ -64,7 +64,7 @@ export class BullsAndCowsMainComponent implements OnInit {
   }
 
   updateGuess(e: string): void {
-    console.log(this.guess.push(e));
+    e!=='' && this.guess.push(e);
   }
 
 }

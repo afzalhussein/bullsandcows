@@ -1,0 +1,24 @@
+<p>guess-number works!</p>
+<div class="content">
+    <label>
+    1:
+    <input type="text" #guessFirst (blur)="updateGuess(guessFirst.value)" required size="1" maxlength="1">
+ </label>
+ <label>
+    2:
+    <input type="text" #guessSecond (blur)="updateGuess(guessSecond.value)" required size="1" maxlength="1">
+
+ </label>
+ <label>
+    3:
+    <input type="text" #guessThird (blur)="updateGuess(guessThird.value)"  required size="1" maxlength="1">
+ </label>
+ <label>
+    4:
+    <input type="text" #guessFourth (blur)="updateGuess(guessFourth.value)"  required size="1" maxlength="1">
+ </label>
+ &nbsp;
+ <label for="guessCheck" >
+     <input type="button" value="Guess" name="guessCheck" (click)="onInput([guessFirst, guessSecond, guessThird, guessFourth])" (disabled)="guessFirst.errors">
+ </label>
+</div>

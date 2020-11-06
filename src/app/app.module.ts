@@ -4,11 +4,15 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BullsAndCowsMainComponent } from './bulls-and-cows-main/bulls-and-cows-main.component';
+import { ResultTableComponent } from './result-table/result-table.component';
+import { GuessNumberComponent } from './guess-number/guess-number.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BullsAndCowsMainComponent
+    BullsAndCowsMainComponent,
+    ResultTableComponent,
+    GuessNumberComponent
   ],
   imports: [
     BrowserModule,
