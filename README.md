@@ -6,6 +6,11 @@ To play go to http://localhost:4200/bullsandcows
 
 To play go to https://afzalhussein.github.io/bullsandcows/
 
+# Keys
+Tab key to next input field
+
+Click to Guess
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
 
 ## Development server
